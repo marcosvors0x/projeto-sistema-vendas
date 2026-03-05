@@ -1,5 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using projeto_sistema_vendas.Data;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=sistema.db"));
 
 builder.Services.AddControllers();
 
